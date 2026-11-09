@@ -1,7 +1,17 @@
 using System;
 using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
+// 程序集信息：显示在 exe 的"属性 → 详细信息"里，版本号与 Release 保持一致
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0.0")]
+[assembly: AssemblyTitle("文本关键词分类工具 (KeywordClassifier)")]
+[assembly: AssemblyProduct("KeywordClassifier")]
+[assembly: AssemblyDescription("按类别检索 txt/docx、插入类别标记、按「类名N次-原名称」重命名的 Windows 小工具")]
+[assembly: AssemblyCopyright("Copyright © 2026 steve.loong.yuan")]
 
 namespace WordClassify
 {
