@@ -12,14 +12,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Show environment
-        shell: cmd
-        run: |
-          ver
-          where csc.exe || echo "csc.exe not on PATH - build.bat will fall back to the inbox .NET Framework compiler"
-
+      # build.bat finds a compiler by itself: it scans Program Files for any
+      # Visual Studio edition and falls back to the csc.exe that ships with
+      # .NET Framework (the sources are C# 5 compatible), then prints which
+      # compiler it used.
       - name: Build
         shell: cmd
         run: build.bat q
