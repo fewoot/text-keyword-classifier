@@ -1,0 +1,35 @@
+# ---- build output ----
+bin/
+obj/
+dist/
+release/
+*.exe
+*.pdb
+*.dll
+*.user
+*.suo
+*.cache
+.vs/
+
+# keep the icon sources, ignore nothing under assets
+!assets/app.ico
+!assets/*.png
+
+# ---- local / per-user ----
+config.json
+**/config.json
+
+# ---- test artifacts ----
+**/shots/
+**/_cfgwork/
+**/*.rsp
+
+# ---- archives ----
+*.zip
+*.7z
+*.rar
+
+# ---- OS junk ----
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,36 @@
+name: build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show environment
+        shell: cmd
+        run: |
+          ver
+          where csc.exe || echo "csc.exe not on PATH - build.bat will fall back to the inbox .NET Framework compiler"
+
+      - name: Build
+        shell: cmd
+        run: build.bat q
+
+      - name: Core self-test (43 checks)
+        shell: cmd
+        run: bin\KeywordClassifier.exe --selftest
+
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: KeywordClassifier-win
+          path: bin/KeywordClassifier.exe
+          if-no-files-found: error

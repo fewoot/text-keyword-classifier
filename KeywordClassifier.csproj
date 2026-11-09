@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C4F2A61-9D3B-4E52-8A17-5B0E9C6D2F31}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WordClassify</RootNamespace>
+    <AssemblyName>KeywordClassifier</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <LangVersion>latest</LangVersion>
+    <ApplicationIcon>assets\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="src\CategoryEditor.cs" />
+    <Compile Include="src\Keywords.cs" />
+    <Compile Include="src\MainForm.cs" />
+    <Compile Include="src\Matcher.cs" />
+    <Compile Include="src\Processor.cs" />
+    <Compile Include="src\Program.cs" />
+    <Compile Include="src\SelfTest.cs" />
+    <Compile Include="src\Settings.cs" />
+    <Compile Include="src\TextReaders.cs" />
+    <Compile Include="src\Ui.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build.bat" />
+    <None Include="build-vs.bat" />
+    <None Include="test-all.bat" />
+    <None Include="assets\app.ico" />
+    <None Include="docs\notes.md" />
+    <None Include="docs\customize.md" />
+    <None Include="tools\IconMaker.cs" />
+    <None Include="tools\IconPreview.cs" />
+    <None Include="tools\VerifyExeIcon.cs" />
+    <None Include="tools\VerifyWindowIcon.cs" />
+    <None Include="tools\E2ETest.cs" />
+    <None Include="tools\UiSmoke.cs" />
+    <None Include="tools\ConfigTest.cs" />
+    <None Include="tools\LayoutTest.cs" />
+    <None Include="tools\DpiTest.cs" />
+    <None Include="tools\Probe.cs" />
+    <None Include="tools\Shot.cs" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
