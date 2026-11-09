@@ -3,6 +3,7 @@
 按类别检索文件夹里的 **.txt / .docx**，统计每个类别命中多少次，在关键词前插入类别标记，
 再按「**类名N次-原名称**」重命名输出到指定文件夹。**原文件永远不会被修改。**
 
+[![build](https://github.com/fewoot/text-keyword-classifier/actions/workflows/build.yml/badge.svg)](https://github.com/fewoot/text-keyword-classifier/actions/workflows/build.yml)
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4)
 ![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4)
 ![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
